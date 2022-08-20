@@ -84,3 +84,20 @@ Compiler can evaluate and reduce this to:
 
 ## Shortcuts and Alternate Routes
 
+### Single-pass Compilers
+
+- Some simple compilers interleave parsing, analysis and code gen so that they produce output code directly in the parser, without syntax trees or IRs in the middle.
+
+- __Single-pass compilers__ restrict the design of the language - no intermediate data structures to store global info about the program and you don't revisit any previously parsed code. (eg. C, Pascal)
+
+- In the old days, memory was precious. Compilers might not even be able to hold an _entire source file_, let alone the entire program.
+
+### Tree-walk Interpreters
+
+- Some PLs execute code right after parsing it to an AST. To run the program, the interpreter traverses the syntax tree one branch and leaf at a time, evaluating teach ndoe as it goes along.
+
+- Not widely used for general purpose PLs since it tends to be slow. 
+
+### Transpilers
+
+
