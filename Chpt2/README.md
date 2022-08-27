@@ -100,4 +100,37 @@ Compiler can evaluate and reduce this to:
 
 ### Transpilers
 
+- __Transpilers__, formly called __source to source compilers__ or __transcompilers__, translates languages to another language that is "just as high of a level."
+
+- If tooling already exist for language A to compile into a lower language, then language B may not have to do the tedious as well - if we can go from B -> A, we can go from B -> lower level language
+
+- Back in the day, as UNIX gained fame, lots of compilers produced C as their output code since C was everywhere UNIX was. Today's "modern machine" is the web brwoser, and its language is JavaScript (for better or for worse). Many languages these days target JS since its the main way to get your code running in the browser (and now mobile phones, desktop apps, VR, toaster ovens?)
+
+- The more dissimilar two languages are, the more phases of a typical full compiler you will see (eg. analysis, optimization)
+
+### Just in time compilation
+
+- The fastest way to execute code is by compiling it to machine code, but you might not know what architecture your end user's machine supports. What do you do?
+
+- You can compile it to native for the architecture that the computer supports when the program is loaded. (eg. from JS source directly, or bytecode for JVM, CLR). This is called __just in time compilation__, or __JIT compilation__.
+
+- Some advanced JITs embed mechanisms to to see what areas are hotspots, and recompile them with more advanced optimizations.
+
+## Compilers and Interpreters
+
+- __Compiling__ is an implementation technique that translates some source language to another - typically lower level. (this includes transpiling, bytecode generation, machine code generation, etc)
+
+- __Interpreters__ is an implementation technique that takes source code and executes it immediately. It runs the program "from source."
+
+- Compilers don't execute the code that they output after transforming.
+
+- Its not always easy to distinguish when something is a compiler or an interpreter. Sometimes, they are both!
+
+- Compilers: javac, gcc, Typescript, CoffeeScript, Rust, clang
+
+- Interpreters: MRI(Ruby), PHP3
+
+- Hazy Middle: C#, Go, Scala, Lua, CPython, V8 (JS), Haskell, PHP4, YARV(Ruby)
+
+
 
