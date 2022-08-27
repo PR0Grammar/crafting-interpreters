@@ -1,0 +1,5 @@
+1. Find the scanner and parser of an OSS implementation of a langauge. Is it hand-written or generated using tools like Lex or Yacc?
+
+2. JIT compilation tends to be the fastest way to implement a dynamically-typed language, but not all of them use it. What reasons are there not to JIT?
+
+3. Most Lisp implementations that compile ot C also contain an interpreter that lets them execute Lisp code on the fly as well. Why?
