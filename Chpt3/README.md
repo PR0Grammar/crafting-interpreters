@@ -18,5 +18,3 @@
 - There are two main techniques to manage memory in high level languages: reference counting and garbage collection (GC)
 
 - __Reference counters__ keep count of the number of references to a particular resource.
-
-### Data Types
