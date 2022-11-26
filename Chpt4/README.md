@@ -4,7 +4,7 @@
 
 - The scanner takes raw source code as a series of characters and groups into into a series of chunks called __tokens__ (meaningful "words" or "punctuations")
 
-- Scanners are pretty much a `switch` statement.
+- Scanners are pretty much a `switch` statement - they just need to handle every valid case
 
 ## The Interpreter Framework
 
@@ -14,11 +14,25 @@
 
 - When the user's code is working, they aren't thinking about the langauge at all - their headspace is all about _the program_. When things are wrong, they start to notice the implementation. 
 
-### Lexemes and Tokens
+## Lexemes and Tokens
 
 - Our job in lexical analysis is to scan through the list of characters and group them together in small sequences that still represent something.
 
 - Each of these "blobs" of characters is called a lexemes. **The lexemes are only the raw substrings of the source code. Tokens are the "type" of that lexeme**. 
 
     - eg) lexeme="var" <> token="VARIABLE"
-          lexeme=="<=" <> token="LESS_THAN_EQUAL_TO_COMP"
+          lexeme="<=" <> token="LESS_THAN_EQUAL_TO_COMP"
+    
+    - There are many classifications for token types: 
+        - single-character: left_paran, right_paran, dot, minus, plus, etc
+        - one or two characters: equal, equal_equal, greater_than, etc
+        - literals: identifier, string, number
+        - keywords: and, class, else, false, fun, return, super, true, etc.
+
+### Location Info
+
+- As noted previously, its important to tell users _where_ the errors occured. Tracking it within the `Token` class
+will help.
+
+- Some interpreters that are more sophisticated can include column, length and line, but to keep it simple, we will only include the line
+
