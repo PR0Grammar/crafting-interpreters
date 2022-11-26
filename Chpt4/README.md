@@ -36,3 +36,13 @@ will help.
 
 - Some interpreters that are more sophisticated can include column, length and line, but to keep it simple, we will only include the line
 
+
+## Regular Languages and Expressions
+
+- The rules that determine how a particular language groups characters into lexemes are called its **lexical grammar**.
+
+- Most programming languages have rules of lexical grammar that are simple enough to be classified as a **regular language**.
+
+
+## Recognizing Lexemes
+
