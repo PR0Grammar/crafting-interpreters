@@ -20,11 +20,10 @@ def processFile(file_name):
 
 def lox():
     args = sys.argv[1:]
-    if(len(args) != 1):
+    if len(args) != 1:
         printError("Failed to run\nUsage: plox [script]")
         sys.exit(1)
     processFile(args[0])
-    
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     lox()
