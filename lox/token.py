@@ -1,4 +1,4 @@
-from lox.token_type import TokenType
+from token_type import TokenType
 
 
 class Token:

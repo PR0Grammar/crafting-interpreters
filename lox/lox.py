@@ -1,5 +1,7 @@
 import sys
 import os
+from token_type import TokenType
+import scanner
 
 def printError(msg):
     print('\033[91m'+msg)
@@ -9,14 +11,19 @@ def error(line: "int", msg: "str"):
     printError(template.format(line, msg))
     sys.exit(1)
 
-def run(lines: "list[str]") -> "None":
+def run(raw_file_content: str) -> "None":
+    lox_scanner = scanner.Scanner(raw_file_content)
+
+    tokens = lox_scanner.scan_tokens()
+    for t in tokens:
+        print(TokenType(t.token_type).name)
     return None
 
 def processFile(file_name):
     script_dir = os.path.abspath(os.getcwd())
     abs_file_path = os.path.join(script_dir, file_name)
-    lines = open(abs_file_path, "r").readlines()
-    run(lines)
+    file = open(abs_file_path, "r").read()
+    run(file)
 
 def lox():
     args = sys.argv[1:]

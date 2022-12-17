@@ -46,3 +46,15 @@ will help.
 
 ## Recognizing Lexemes
 
+### Maximal munch
+
+- When two lexical grammar rules can both match a piece of code that the scanner is loking at, whichever one matches the most characters wins.
+
+```Python
+
+# for keyword
+for
+
+# forgo variable - most characters, so we should assume variable, not "for"
+forgo
+```
