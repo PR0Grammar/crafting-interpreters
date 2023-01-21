@@ -50,11 +50,24 @@ will help.
 
 - When two lexical grammar rules can both match a piece of code that the scanner is loking at, whichever one matches the most characters wins.
 
-```Python
+- Maximal munch means we can't easily detect a reserved word until we've reached the end of what might instead be an identifier. 
+    - **Reserved words** are just identifiers claimed by the language!
+
+- For any lexemes starting with a letter or underscore, we assume its an identifier
+
+```php
 
 # for keyword
 for
 
-# forgo variable - most characters, so we should assume variable, not "for"
-forgo
+# foreach variable - most characters, so we should assume variable, not "for"
+foreach
+```
+
+```python
+# reserved word vs identifier
+
+for
+# vs
+forgo = 3
 ```

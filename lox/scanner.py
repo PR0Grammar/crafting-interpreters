@@ -31,7 +31,7 @@ class Scanner:
         self.line = 1
 
     # Main method handling the scan
-    def scan_tokens(self) -> 'list[Token]':
+    def scan_tokens(self) -> "list[Token]":
         while not self.is_at_end():
             # Start of "substr" of the current scan
             self.start = self.current
@@ -107,7 +107,10 @@ class Scanner:
         # Number literal
         elif c.isnumeric():
             decimal_seen = False
-            while self.peek != "\n" and not self.is_at_end():
+            while (
+                not self.is_at_end() and
+                self.peek() != '\n'
+            ):
                 if self.peek() == ".":
                     if decimal_seen:
                         lox.error(self.line, "Unexpected character in number literal.")
@@ -117,7 +120,7 @@ class Scanner:
                     lox.error(self.line, "Unexpected character in number literal.")
                 self.current += 1
 
-            num_literal_str = self.source[self.start : self.current + 1]
+            num_literal_str = self.source[self.start : self.current +1]
             num_literal = (
                 float(num_literal_str) if decimal_seen else int(num_literal_str)
             )

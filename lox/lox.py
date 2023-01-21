@@ -28,9 +28,11 @@ def processFile(file_name):
 def lox():
     args = sys.argv[1:]
     if len(args) != 1:
-        printError("Failed to run\nUsage: plox [script]")
+        printError("Failed to run\nUsage: python3 lox [relative_path]")
         sys.exit(1)
     processFile(args[0])
 
+
+# eg. python3 lox/lox.py lox/test_files/valid_mixed.lox
 if __name__ == "__main__":
     lox()
